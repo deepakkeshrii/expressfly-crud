@@ -1,19 +1,30 @@
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
+import logo from "../assets/images/expressfly-logo.png";
+
 const Navbar = () => {
+  const { user, logout, isAuthenticated } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/login");
+  };
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-custom-nav">
       <div className="container">
         
         {/* Logo */}
-        <a className="navbar-brand" to="/">
+        <Link className="navbar-brand" to="/">
           <img 
             width="300" 
             height="100" 
-            src="https://placehold.co/600x400" 
+            src={logo} 
             className="img-fluid custom-logo" 
             alt="ExpressFly"
           />
-        </a>
+        </Link>
 
         {/* Toggle for mobile */}
         <button
@@ -31,14 +42,28 @@ const Navbar = () => {
         {/* content */}
         <div className="collapse navbar-collapse" id="navbarContent">
           <div className="navbar-nav ms-auto">
+            {isAuthenticated ? (
+              <>
                 <span className="nav-item nav-link text-light">
-                  Welcome, Deepak
+                  Welcome, {user?.name}
                 </span>
                 <button
                   className="btn custom-btn ms-lg-2 mt-2 mt-lg-0"
+                  onClick={handleLogout}
                 >
                   Logout
                 </button>
+              </>
+            ) : (
+              <>
+                <Link className="nav-link" to="/login">
+                  Login
+                </Link>
+                <Link className="nav-link" to="/register">
+                  Register
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </div>

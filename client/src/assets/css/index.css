@@ -1,0 +1,92 @@
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  height: 100vh;
+  font-family: 'Nunito', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(120deg, #fceabb, #b3ecff, #d6d0f5, #ffdee9) !important;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+th {
+  padding: 1rem 1.5rem;
+}
+
+.custom-logo {
+  width: 130px;
+  height: 40px;
+}
+
+.bg-custom-nav {
+  background: linear-gradient(120deg, #fff3d3, #fceabb, #b3ecff, #d6d0f5, #ffdee9);
+
+}
+
+.nav-link,
+.custom-btn {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #000 !important;
+}
+
+.nav-link:hover {
+  color: rgb(233, 60, 5) !important;
+}
+
+.custom-btn {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #fff !important;
+  background-color: #153364 !important;
+  border-radius: 20px !important;
+  line-height: 38px !important;
+  padding: 0 30px !important;
+}
+
+.custom-btn:hover {
+  background-color: rgb(233, 60, 5) !important;
+}
+
+@media (prefers-color-scheme: light) {
+  a:hover {
+    color: #747bff;
+  }
+
+  button {
+    background-color: #f9f9f9;
+  }
+}
